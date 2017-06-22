@@ -1,0 +1,97 @@
+@mixin transform($param){
+    -webkit-transform: $param;
+    -moz-transform: $param;
+    -ms-transform: $param;
+    -o-transform: $param;
+    transform: $param;
+}
+@mixin transition($param){
+    -webkit-transition: $param;
+    -moz-transition: $param;
+    -ms-transition: $param;
+    -o-transition: $param;
+    transition: $param;
+}
+@mixin boxShadow($param){
+    -webkit-box-shadow: $param;
+    -moz-box-shadow: $param;
+     box-shadow: $param;
+}
+@mixin borderRadius($param){
+    -webkit-border-radius: $param;
+    -moz-border-radius: $param;
+    border-radius: $param;
+}
+@mixin linearGradient($param...){
+    background: linear-gradient(#{$param});
+    background:-webkit-linear-gradient(#{$param});
+    background:-ms-linear-gradient(#{$param});
+    background:-moz-linear-gradient(#{$param});
+}
+@mixin ellipsis($param){
+    width:$param;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: keep-all;
+}
+@mixin clearfix(){
+    &:after{
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+@mixin alpha($param){
+    opacity:$param;
+    filter:Alpha(opacity=$param*100);
+}
+
+
+@mixin box{
+    display: -webkit-box; 
+    display: -moz-box; 
+    display: -ms-flexbox; 
+    display: -webkit-flex; 
+    display: flex; 
+}
+//主轴对齐
+@mixin justifyContent($param:center){
+    -webkit-box-pack: $param;
+    -moz-justify-content: $param;
+    -webkit-justify-content: $param;
+    justify-content: $param;
+}
+//交叉轴对齐
+@mixin alignItems($param:left){
+    -webkit-box-align: $param;
+    -moz-align-items: $param;
+    -webkit-align-items: $param;
+    align-items: $param;
+}
+@mixin flexFlow($param:nowrap){
+    $old:single;
+    $new:nowrap;
+    @if $param == wrap{
+        $old:multiple;
+        $new:wrap;
+    }
+    -moz-box-lines: $old; 
+    -webkit-box-lines: $old; 
+    box-lines: $old;
+    flex-wrap:$new; 
+}
+@mixin itemFlex($grow:1,$shrink:1){
+    -webkit-box-flex: $grow;
+    -moz-flex-grow: $grow;
+    -webkit-flex-grow: $grow;
+    flex-grow: $grow;
+    -webkit-box-flex: $shrink;
+    -moz-flex-shrink: $shrink;
+    -webkit-flex-shrink: $shrink;
+    flex-shrink: $shrink;
+  
+}

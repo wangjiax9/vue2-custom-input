@@ -1,0 +1,33 @@
+<div class="ypw-thread-edit">
+	<div class="t">
+		<input class="input" type="text" id="title" placeholder="标题（必填，20字内）" />
+	</div>
+	<div class="rich-edit">
+		<div class="h">
+			<dl>
+				<dt>
+					<span>活跃时间</span>
+					<select id="selLife">
+						<option value="24">24小时</option>
+						<option value="36">36小时</option>
+						<option value="48">48小时</option>
+					</select>
+				</dt>
+				<dd><span id="bold" title="粗体"><i class="ico ico-rich-bold"></i></span></dd>
+				<dd><span id="strikeThrough" title="划掉"><i class="ico ico-rich-linethrough"></i></span></dd>
+				<dd>
+					<form id="uploadForm" action="http://file.webapp.163.com/gameapp/file/new/" method="POST" enctype="multipart/form-data">
+						<span id="insertImg" title="插入图片"><i class="ico ico-rich-img"></i></span>
+						<input type="file" name="fpfile" id="imgFile" style="visibility: hidden;"/>
+						<input type="hidden" name="Authorization" id="authorization" value="Policy xx">
+					</form>
+				</dd>
+			</dl>
+		</div>
+		<div class="content"  id="editor" contentEditable="true" placeholder="分享你和游戏的故事~干货内容有几率出现在游戏详情页中~"></div>
+	</div>
+	<div class="f">
+		<span class="error-msg pull-left" id="formMsg">标题为空</span>
+		<span class="btn btn-primary pull-right" id="sendThread">发送帖子</span>
+	</div>
+</div>
