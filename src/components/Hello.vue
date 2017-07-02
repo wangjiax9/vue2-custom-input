@@ -4,11 +4,13 @@
     <h2>Essential Links</h2>
     <ori-input v-model="val"></ori-input>
     <h3>{{val}}</h3>
+    <rich-editor></rich-editor>
   </div>
 </template>
 
 <script>
 import Input from './Input'
+import RichEditor from './RichEditor'
 export default {
   data () {
     return {
@@ -17,7 +19,8 @@ export default {
     }
   },
   components:{
-    'ori-input':Input
+    'ori-input':Input,
+    'rich-editor':RichEditor
   }
 }
 </script>

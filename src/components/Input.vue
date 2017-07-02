@@ -3,8 +3,8 @@
         <input type="text" :value="value" @input="updateValue($event.target.value)"/>
     </div> 
 </template>
-<script>
-export default {
+<script>    
+export default {    
   props:['value'],
   methods:{
     // 不是直接更新值，而是使用此方法来对输入值进行格式化和位数限制
